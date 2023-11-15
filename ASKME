@@ -7,6 +7,7 @@ using namespace std;
 
 int main() {
     string user_input;
+    int i = 0;
     cout << "A Constellation: Hello! Feel free to ask me something.\n";
 
     while (true) {
@@ -62,6 +63,10 @@ int main() {
             "Enough to pass or average.",
             "Ask a friend for a number 1-100."
         };
+        
+        string questionResponses[] = {
+            "Who am I? \n What is my purpose? \n Should I do it? \n I'm tired. \n How much effort?"
+        };
 
         // Convert the user input to lowercase for easier comparison
         for (char& c : user_input) {
@@ -94,10 +99,11 @@ int main() {
         } else if (user_input == "how much effort?"){
             int randomIndex = rand() % effortResponses.size();
             cout << "A Constellation: " << effortResponses[randomIndex] << "\n";
+        } else if (user_input == "give me the questions." || user_input == "give me the questuions"){
+            cout << "A Constellation: " << questionResponses[i] << "\n";
         } else {
-            cout << "A Constellation: I see. You're not actually HIM. Would you like to know the kind of questions you may ask me?\n";
-        }
+            cout << "A Constellation: I see. You're not actually HIM. Say \"Give me the questions\" to know what to ask.\n";
     }
-
+}
     return 0;
 }
